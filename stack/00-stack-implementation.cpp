@@ -80,9 +80,9 @@ int main(){
     }
     st.pop();
 
+    //creation of stack
 
     /*
-    //creation of stack
     stack<int> s;
     //stack operations
     s.push(1);
