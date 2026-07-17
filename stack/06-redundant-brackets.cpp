@@ -6,7 +6,6 @@ using namespace std;
 
 bool findRedundantBrackets(string &s)
 {
-    // Write your code here.
     stack<char> st;
     for (int i=0;i<s.length();i++){
         if (s[i]=='(' || s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/'){
