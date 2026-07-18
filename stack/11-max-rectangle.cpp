@@ -60,7 +60,7 @@ int maxArea(vector<vector<int>> &mat) {
 }
 
 
-// Driver code
+// Driver Code
 
 int main(){
     int n,m;
@@ -74,3 +74,4 @@ int main(){
     int ans=maxArea(matrix);
     cout<<ans<<endl;
 }
+
