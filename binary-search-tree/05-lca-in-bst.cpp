@@ -14,15 +14,32 @@ class Node{
 };
 
 
-Node* LCAinaBST(Node* root, Node* P, Node* Q) {
+// Method - 1 (using recursion)
+Node* LCAinaBST1(Node* root, Node* P, Node* Q) {
     if (root == NULL) {
         return NULL;
     }
     if (P->data < root->data && Q->data < root->data) {
-        return LCAinaBST(root->left, P, Q);
+        return LCAinaBST1(root->left, P, Q);
     }
     if (P->data > root->data && Q->data > root->data) {
-        return LCAinaBST(root->right, P, Q);
+        return LCAinaBST1(root->right, P, Q);
+    }
+    return root;
+}
+
+// Method - 2 (without recusion)
+Node* LCAinaBST2(Node* root,Node* P,Node* Q){
+    while (root!=NULL){
+        if (P->data < root->data && Q->data < root->data){
+            root=root->left;
+        }
+        else if (P->data > root->data && Q->data > root->data){
+            root=root->right;
+        }
+        else{
+            return root;
+        }
     }
     return root;
 }
@@ -76,6 +93,7 @@ int main(){
     cin>>p>>q;
     Node* P=searchBST(root,p);
     Node* Q=searchBST(root,q);
-    cout<<LCAinaBST(root,P,Q)->data<<endl;
+    cout<<LCAinaBST1(root,P,Q)->data<<endl;
+    cout<<LCAinaBST2(root,P,Q)->data<<endl;
     
 }
